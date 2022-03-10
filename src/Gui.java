@@ -45,11 +45,18 @@ private void ActionListener(){ //Adds actionListeners for each button
 public void actionPerformed(ActionEvent e){ //The action performed when the button with listener is clicked
         for (int i = 0;i < row;i++){
             for (int j = 0;j<col;j++){
-                if (e.getSource() == buttons[i][j]){
+                if (e.getSource() == buttons[i][j]){ //runs through all buttons to find the one clicked
                     if (turn == 1) {
-                        buttons[i][j].setFont(new Font("Ink Free", Font.BOLD, 100));
+                        buttons[i][j].setFont(new Font("Ink Free", Font.BOLD, 100)); //set button to player 1
                         buttons[i][j].setForeground(new Color(255, 0, 0));
                         buttons[i][j].setText("O");
+                        turn = 2;
+                    }
+                    else{
+                        buttons[i][j].setFont(new Font("Ink Free", Font.BOLD, 100)); //set button to player 2
+                        buttons[i][j].setForeground(new Color(255, 255, 0));
+                        buttons[i][j].setText("O");
+                        turn = 1;
                     }
                 }
             }
